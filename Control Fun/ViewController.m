@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *numberField;
 @property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *leftSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *rightSwitch;
 
 @end
 
@@ -41,6 +43,14 @@
 - (IBAction)sliderChanged:(UISlider*)sender {
     int progress = (int)lroundf(sender.value);
     self.sliderLabel.text = [NSString stringWithFormat:@"%d", progress];
+}
+
+- (IBAction)switchChanged:(UISwitch*)sender{
+    
+    BOOL setting = sender.isOn;
+    
+    [self.leftSwitch setOn:setting animated:YES];
+    [self.rightSwitch setOn:setting animated:YES];
 }
 
 @end
