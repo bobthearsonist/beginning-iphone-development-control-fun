@@ -62,6 +62,32 @@
 }
 
 - (IBAction)buttonPressed:(UIButton *)sender {
+    UIAlertController* areYouSureController = [UIAlertController alertControllerWithTitle:@"Are you sure?" message: nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction* yesIAmSureAction = [UIAlertAction actionWithTitle:@"Yes, I'm sure!" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action)
+                                       {
+                                           NSString* yesIamSureMessage = [NSString stringWithFormat:@"You can breathe easy, %@everything went okay", [self.nameField.text length] ?[NSString stringWithFormat:@"%@, ",self.nameField.text]:@""];
+                                           
+                                           UIAlertController* yesImSureConfirmationController = [UIAlertController alertControllerWithTitle:@"Something Was Done" message:yesIamSureMessage preferredStyle:UIAlertControllerStyleAlert];
+                                           [yesImSureConfirmationController addAction:[UIAlertAction actionWithTitle:@"Phew!" style:UIAlertActionStyleCancel handler:nil]];
+                                           
+                                           [self presentViewController:yesImSureConfirmationController animated:NO completion:nil];
+                                       }];
+    [areYouSureController addAction:yesIAmSureAction];
+    
+    UIAlertAction* noIamNotSureAction = [UIAlertAction actionWithTitle:@"No way!" style:UIAlertActionStyleCancel handler:nil];
+    [areYouSureController addAction:noIamNotSureAction];
+    
+    UIPopoverPresentationController *popoverController = areYouSureController.popoverPresentationController;
+    
+    if (popoverController)
+    {
+        popoverController.sourceView = sender;
+        popoverController.sourceRect = sender.bounds;
+        popoverController.permittedArrowDirections = UIPopoverArrowDirectionDown;
+    }
+    
+    [self presentViewController:areYouSureController animated:YES completion:nil];
 }
 
 
