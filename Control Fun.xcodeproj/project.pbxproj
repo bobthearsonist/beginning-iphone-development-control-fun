@@ -15,6 +15,9 @@
 		847A7D621D7268DE006C2402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847A7D601D7268DE006C2402 /* LaunchScreen.storyboard */; };
 		847A7D6D1D7268DE006C2402 /* Control_FunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 847A7D6C1D7268DE006C2402 /* Control_FunTests.m */; };
 		847A7D781D7268DE006C2402 /* Control_FunUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 847A7D771D7268DE006C2402 /* Control_FunUITests.m */; };
+		847A7D881D726E8D006C2402 /* apress_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 847A7D851D726E8D006C2402 /* apress_logo.png */; };
+		847A7D891D726E8D006C2402 /* apress_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847A7D861D726E8D006C2402 /* apress_logo@2x.png */; };
+		847A7D8A1D726E8D006C2402 /* apress_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847A7D871D726E8D006C2402 /* apress_logo@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		847A7D731D7268DE006C2402 /* Control FunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Control FunUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		847A7D771D7268DE006C2402 /* Control_FunUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Control_FunUITests.m; sourceTree = "<group>"; };
 		847A7D791D7268DE006C2402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847A7D851D726E8D006C2402 /* apress_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apress_logo.png; path = "../../../../../admin/Downloads/Examples/04 - Logos/apress_logo.png"; sourceTree = "<group>"; };
+		847A7D861D726E8D006C2402 /* apress_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "apress_logo@2x.png"; path = "../../../../../admin/Downloads/Examples/04 - Logos/apress_logo@2x.png"; sourceTree = "<group>"; };
+		847A7D871D726E8D006C2402 /* apress_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "apress_logo@3x.png"; path = "../../../../../admin/Downloads/Examples/04 - Logos/apress_logo@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,9 @@
 				847A7D591D7268DE006C2402 /* ViewController.m */,
 				847A7D5B1D7268DE006C2402 /* Main.storyboard */,
 				847A7D5E1D7268DE006C2402 /* Assets.xcassets */,
+				847A7D851D726E8D006C2402 /* apress_logo.png */,
+				847A7D861D726E8D006C2402 /* apress_logo@2x.png */,
+				847A7D871D726E8D006C2402 /* apress_logo@3x.png */,
 				847A7D601D7268DE006C2402 /* LaunchScreen.storyboard */,
 				847A7D631D7268DE006C2402 /* Info.plist */,
 				847A7D521D7268DE006C2402 /* Supporting Files */,
@@ -243,9 +252,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847A7D881D726E8D006C2402 /* apress_logo.png in Resources */,
 				847A7D621D7268DE006C2402 /* LaunchScreen.storyboard in Resources */,
+				847A7D8A1D726E8D006C2402 /* apress_logo@3x.png in Resources */,
 				847A7D5F1D7268DE006C2402 /* Assets.xcassets in Resources */,
 				847A7D5D1D7268DE006C2402 /* Main.storyboard in Resources */,
+				847A7D891D726E8D006C2402 /* apress_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +510,7 @@
 				847A7D7E1D7268DE006C2402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		847A7D7F1D7268DE006C2402 /* Build configuration list for PBXNativeTarget "Control FunTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +519,7 @@
 				847A7D811D7268DE006C2402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		847A7D821D7268DE006C2402 /* Build configuration list for PBXNativeTarget "Control FunUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +528,7 @@
 				847A7D841D7268DE006C2402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
