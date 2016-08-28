@@ -30,4 +30,10 @@
     [sender resignFirstResponder];
 }
 
+- (IBAction)backgroundTap:(id)sender {
+    //clsoe the keyboard if the background is touched
+    [self.nameField resignFirstResponder];
+    [self.numberField resignFirstResponder];
+}
+
 @end
