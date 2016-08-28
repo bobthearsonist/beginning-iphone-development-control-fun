@@ -62,32 +62,32 @@
 }
 
 - (IBAction)buttonPressed:(UIButton *)sender {
-    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@" Are You Sure?" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@" Yes, I'm sure!" style:UIAlertActionStyleDestructive handler: ^( UIAlertAction *action)
-                                {
-                                    NSString *msg;
-                                    if ([ self.nameField.text length] > 0)
-                                    {
-                                        msg = [NSString stringWithFormat: @" You can breathe easy, %@, everything went OK.", self.nameField.text];
-                                    }
-                                    else
-                                    {
-                                        msg = @" You can breathe easy, everything went OK.";
-                                    }
-                                    UIAlertController *controller2 = [UIAlertController alertControllerWithTitle:@" Something Was Done" message:msg preferredStyle:UIAlertControllerStyleAlert];
-                                    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@" Phew!" style: UIAlertActionStyleCancel handler:nil];
-                                    [controller2 addAction:cancelAction];
-                                    [self presentViewController:controller2 animated:YES completion:nil];
-                                }];
-    UIAlertAction *noAction = [UIAlertAction actionWithTitle:@" No way!" style:UIAlertActionStyleCancel handler:nil];
-    [controller addAction:yesAction];
-    [controller addAction:noAction];
-    UIPopoverPresentationController *ppc = controller.popoverPresentationController;
-    if (ppc != nil)
+    UIAlertController* areYouSureController = [UIAlertController alertControllerWithTitle:@"Are you sure?" message: nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction* yesIAmSureAction = [UIAlertAction actionWithTitle:@"Yes, I'm sure!" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action)
+                                       {
+                                           NSString* yesIamSureMessage = [NSString stringWithFormat:@"You can breathe easy, %@everything went okay", [self.nameField.text length] ?[NSString stringWithFormat:@"%@, ",self.nameField.text]:@""];
+                                           
+                                           UIAlertController* yesImSureConfirmationController = [UIAlertController alertControllerWithTitle:@"Something Was Done" message:yesIamSureMessage preferredStyle:UIAlertControllerStyleAlert];
+                                           [yesImSureConfirmationController addAction:[UIAlertAction actionWithTitle:@"Phew!" style:UIAlertActionStyleCancel handler:nil]];
+                                           
+                                           [self presentViewController:yesImSureConfirmationController animated:NO completion:nil];
+                                       }];
+    [areYouSureController addAction:yesIAmSureAction];
+    
+    UIAlertAction* noIamNotSureAction = [UIAlertAction actionWithTitle:@"No way!" style:UIAlertActionStyleCancel handler:nil];
+    [areYouSureController addAction:noIamNotSureAction];
+    
+    UIPopoverPresentationController *popoverController = areYouSureController.popoverPresentationController;
+    
+    if (popoverController)
     {
-        ppc.sourceView = sender; ppc.sourceRect = sender.bounds;
+        popoverController.sourceView = sender;
+        popoverController.sourceRect = sender.bounds;
+        popoverController.permittedArrowDirections = UIPopoverArrowDirectionDown;
     }
-    [self presentViewController:controller animated:YES completion:nil];
+    
+    [self presentViewController:areYouSureController animated:YES completion:nil];
 }
 
 
