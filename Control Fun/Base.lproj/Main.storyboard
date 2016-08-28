@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,11 +17,57 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apress_logo" translatesAutoresizingMaskIntoConstraints="NO" id="qYJ-jS-q73">
+                                <rect key="frame" x="214" y="0.0" width="172" height="80"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veU-PH-p21">
+                                <rect key="frame" x="12" y="92" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in a number" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RBV-nH-UjR">
+                                <rect key="frame" x="87" y="126" width="493" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7b-iZ-gvr">
+                                <rect key="frame" x="12" y="130" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in a name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="quN-xX-qM2">
+                                <rect key="frame" x="87" y="88" width="493" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U7b-iZ-gvr" firstAttribute="centerY" secondItem="RBV-nH-UjR" secondAttribute="centerY" id="2Gc-sh-L3K"/>
+                            <constraint firstItem="veU-PH-p21" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="3ER-dR-VNh"/>
+                            <constraint firstItem="quN-xX-qM2" firstAttribute="top" secondItem="qYJ-jS-q73" secondAttribute="bottom" constant="8" symbolic="YES" id="D8i-Yc-sSs"/>
+                            <constraint firstItem="quN-xX-qM2" firstAttribute="trailing" secondItem="RBV-nH-UjR" secondAttribute="trailing" id="GFU-Zx-GbF"/>
+                            <constraint firstItem="qYJ-jS-q73" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ptj-tH-edp"/>
+                            <constraint firstItem="RBV-nH-UjR" firstAttribute="leading" secondItem="U7b-iZ-gvr" secondAttribute="trailing" constant="8" symbolic="YES" id="ZC9-E5-0kH"/>
+                            <constraint firstItem="veU-PH-p21" firstAttribute="centerY" secondItem="quN-xX-qM2" secondAttribute="centerY" id="bp5-t0-qIL"/>
+                            <constraint firstItem="qYJ-jS-q73" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="e6q-Wi-ClI"/>
+                            <constraint firstItem="veU-PH-p21" firstAttribute="trailing" secondItem="U7b-iZ-gvr" secondAttribute="trailing" id="fDL-qd-zZ6"/>
+                            <constraint firstItem="quN-xX-qM2" firstAttribute="leading" secondItem="veU-PH-p21" secondAttribute="trailing" constant="8" id="k4a-oj-MAG"/>
+                            <constraint firstItem="RBV-nH-UjR" firstAttribute="top" secondItem="quN-xX-qM2" secondAttribute="bottom" constant="8" symbolic="YES" id="rEx-h3-cVH"/>
+                            <constraint firstItem="quN-xX-qM2" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rci-FT-D0R"/>
+                            <constraint firstItem="veU-PH-p21" firstAttribute="leading" secondItem="U7b-iZ-gvr" secondAttribute="leading" id="usy-Lu-l5S"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="apress_logo" width="172" height="80"/>
+    </resources>
 </document>
