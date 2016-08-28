@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *leftSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *rightSwitch;
+@property (weak, nonatomic) IBOutlet UIButton *doSomethingButton;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *toggleControls;
 
 @end
 
@@ -52,5 +54,15 @@
     [self.leftSwitch setOn:setting animated:YES];
     [self.rightSwitch setOn:setting animated:YES];
 }
+
+- (IBAction)toggleControls:(UISegmentedControl *)sender {
+    self.leftSwitch.hidden ^= YES;
+    self.rightSwitch.hidden ^= YES;
+    self.doSomethingButton.hidden ^= YES;
+}
+
+- (IBAction)buttonPressed:(UIButton *)sender {
+}
+
 
 @end
